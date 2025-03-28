@@ -1,26 +1,17 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <link rel="icon" type="image/png" sizes="32x32" href="КАЛ .jpg">
-    <link rel="icon" type="image/png" sizes="16x16" href="">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale/demo-site">
-    <title>LEEWATANA</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-    <!DOCTYPE html>
-<html lang="ru">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Фон на всю страницу</title>
+    <title>LEE WATANA</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1></h1>
-</body>
-<body>
+    <!-- Контейнер для IMG_8780.jpg -->
+    <div class="overlay-container">
+        <span class="background-text">LEE</span> <!-- Добавляем текст LEE -->
+    </div>
+
     <!-- Навигация -->
     <div class="menu">
         <input type="checkbox" id="menu-toggle">
@@ -35,47 +26,77 @@
 
     <!-- Главная страница -->
     <section id="home" class="section home">
-        <img src="КАЛ-.webp" alt="Main Photo">
         <h1>LEE WATANA</h1>
     </section>
-    
+
     <!-- Портфолио -->
     <section id="portfolio" class="section portfolio">
         <div class="gallery">
-            <div class="photo">
-                <img src="ng4.webp" alt="Work 1">
+            <div class="photo" data-collection="wee">
+                <img src="gothh.jpg" alt="Wee v1 Collection">
                 <span>wee v1</span>
             </div>
-            <script>
-                // Находим изображение по ID
-                const image = document.getElementById('galleryLink');
-                
-                // Добавляем обработчик клика
-                image.addEventListener('click', function() {
-                    // Перенаправляем на страницу галереи
-                    window.location.href = '/gallery.html';
-                });
-            </script>
-            <div class="photo">
-                <img src="DSCN0431.webp" alt="Work 2">
+            <div class="photo" data-collection="grime">
+                <img src="ng4 — OUT.jpg" alt="Grime v1 Collection">
                 <span>grime v1</span>
             </div>
-            <div class="photo1">
-                <img src="FFFF-Photoroom.png" alt="Work 3">
+            <div class="photo1" data-collection="soon1">
+                <img src="FFFF-Photoroom.png" alt="Coming Soon">
                 <span>SOON</span>
             </div>
         </div>
+
+        <!-- Контейнеры для коллекций -->
+        <div class="collection-container" id="wee" style="display: none;">
+            <h2>Wee v1</h2>
+            <div class="collection-gallery">
+                <div class="photo">
+                    <img src="DSCN0437.jpg" alt="Photo 1">
+                </div>
+                <div class="photo">
+                    <img src="DSCN0431.webp" alt="Photo 2">
+                </div>
+                <div class="photo">
+                    <img src="IMG_8780.jpg" alt="Photo 3"> <!-- Замени на реальный путь -->
+                </div>
+            </div>
+            <button class="close-collection">Close</button>
+        </div>
+
+        <div class="collection-container" id="grime" style="display: none;">
+            <h2>Grime v1</h2>
+            <div class="collection-gallery">
+                <div class="photo">
+                    <img src="grime_photo1.jpg" alt="Photo 1">
+                </div>
+                <div class="photo">
+                    <img src="grime_photo2.jpg" alt="Photo 2">
+                </div>
+                <div class="photo">
+                    <img src="grime_photo3.jpg" alt="Photo 3">
+                </div>
+            </div>
+            <button class="close-collection">Close</button>
+        </div>
+
+        <div class="collection-container" id="soon1" style="display: none;">
+            <h2>Coming Soon</h2>
+            <p>Эта коллекция скоро будет доступна.</p>
+            <button class="close-collection">Close</button>
+        </div>
     </section>
+
     <section id="contac" class="section contact">
-        <p>NEWSLAVEMAGIC</p>
+        <p>NEWSLVE</p>
     </section>
+
     <!-- Контакты -->
     <section id="contact" class="section contact">
-        <p>WR</p>
+        <p>URSLVE</p>
     </section>
 
     <section class="contact">
-        <h2>Contact Me</h2>
+        <h2>NNN</h2>
         <form>
             <input type="text" placeholder="Your Name" required>
             <input type="email" placeholder="Your Email" required>
@@ -83,5 +104,28 @@
             <button type="submit">Send Message</button>
         </form>
     </section>
+
+    <script>
+        // Открытие коллекции
+        document.querySelectorAll('.photo, .photo1').forEach(item => {
+            item.addEventListener('click', function() {
+                const collectionId = this.getAttribute('data-collection');
+                const collection = document.getElementById(collectionId);
+                document.querySelectorAll('.collection-container').forEach(container => {
+                    container.style.display = 'none';
+                });
+                collection.style.display = 'block';
+                document.querySelector('.gallery').style.display = 'none';
+            });
+        });
+
+        // Закрытие коллекции
+        document.querySelectorAll('.close-collection').forEach(button => {
+            button.addEventListener('click', function() {
+                this.parentElement.style.display = 'none';
+                document.querySelector('.gallery').style.display = 'grid';
+            });
+        });
+    </script>
 </body>
 </html>
