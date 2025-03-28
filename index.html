@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="icon" type="image/png" sizes="32x32" href="КАЛ .jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale/demo-site">
+    <title>LEEWATANA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+    <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фон на всю страницу</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1></h1>
+</body>
+<body>
+    <!-- Навигация -->
+    <div class="menu">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+        <nav>
+            <a href="#home">HOME</a>
+            <a href="#portfolio">PROFILE</a>
+            <a href="#contac">SHITSMELL</a>
+            <a href="#contact">CONTACT</a>
+        </nav>
+    </div>
+
+    <!-- Главная страница -->
+    <section id="home" class="section home">
+        <img src="КАЛ-.webp" alt="Main Photo">
+        <h1>LEE WATANA</h1>
+    </section>
+    
+    <!-- Портфолио -->
+    <section id="portfolio" class="section portfolio">
+        <div class="gallery">
+            <div class="photo">
+                <img src="ng4.webp" alt="Work 1">
+                <span>wee v1</span>
+            </div>
+            <script>
+                // Находим изображение по ID
+                const image = document.getElementById('galleryLink');
+                
+                // Добавляем обработчик клика
+                image.addEventListener('click', function() {
+                    // Перенаправляем на страницу галереи
+                    window.location.href = '/gallery.html';
+                });
+            </script>
+            <div class="photo">
+                <img src="DSCN0431.webp" alt="Work 2">
+                <span>grime v1</span>
+            </div>
+            <div class="photo1">
+                <img src="FFFF-Photoroom.png" alt="Work 3">
+                <span>SOON</span>
+            </div>
+        </div>
+    </section>
+    <section id="contac" class="section contact">
+        <p>NEWSLAVEMAGIC</p>
+    </section>
+    <!-- Контакты -->
+    <section id="contact" class="section contact">
+        <p>WR</p>
+    </section>
+
+    <section class="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</body>
+</html>
